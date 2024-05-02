@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     public Rigidbody RB;
     public float MouseSensitivity = 3;
     public float WalkSpeed = 10;
-    public float JumpPower = 7;
+    public float JumpPower = 4;
     public List<GameObject> Floors;
     
     void Start()
@@ -42,7 +42,15 @@ public class Movement : MonoBehaviour
             else
                 move.y = RB.velocity.y;
             RB.velocity = move;
+            
+            Vector3 eRot = Eyes.transform.localRotation.eulerAngles;
+            eRot.x += yRot;
+            if (eRot.x < -180) eRot.x += 360;
+            if (eRot.x > 180) eRot.x -= 360;
+            eRot = new Vector3(Mathf.Clamp(eRot.x, -90, 90),0,0);
+            Eyes.transform.localRotation = Quaternion.Euler(eRot);
         }
+        
     }
 
     public bool OnGround()
