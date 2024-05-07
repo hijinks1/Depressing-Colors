@@ -7,14 +7,15 @@ public class Colorchange : MonoBehaviour
 
     public Camera Eyes;
     public Material Gray;
-    
-   
-    void Start()
-    {
-        
-    }
+    public Movement other;
     
     void Update()
+    {
+        ClickColor();
+
+    }
+    
+    public void ClickColor()
     {
         if (Input.GetMouseButton(0))
         {
@@ -37,7 +38,7 @@ public class Colorchange : MonoBehaviour
                 //  }
             }
         }
-        
     }
+    
     
 }

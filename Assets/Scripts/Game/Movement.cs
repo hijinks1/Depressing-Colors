@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour
     public float WalkSpeed = 10;
     public float JumpPower = 4;
     public List<GameObject> Floors;
-    
+    public Material Gray;
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -58,15 +58,27 @@ public class Movement : MonoBehaviour
         return Floors.Count > 0;
     }
 
-    private void OnCollisionEnter(Collision other)
+   public void OnCollisionEnter(Collision other)
     {
         if (!Floors.Contains(other.gameObject))
             Floors.Add(other.gameObject);
+
+        ChangeMaterial(other.gameObject, Gray);
     }
 
-    private void OnCollisionExit(Collision other)
+    public void OnCollisionExit(Collision other)
     {
         Floors.Remove(other.gameObject);
     }
 
+    public void ChangeMaterial(GameObject obj, Material newMat)
+    {
+        MeshRenderer[] meshes = obj.GetComponentsInChildren<MeshRenderer>();
+                
+        foreach (MeshRenderer m in meshes)
+        {
+            //turn into this material
+            m.material = Gray;
+        }
+    }
 }
