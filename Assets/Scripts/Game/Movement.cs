@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public Camera Eyes;
     public Rigidbody RB;
     public float MouseSensitivity = 3;
-    public float WalkSpeed = 10;
+    public float WalkSpeed = 6;
     public float JumpPower = 4;
     public List<GameObject> Floors;
     public Material Gray;
@@ -79,6 +79,7 @@ public class Movement : MonoBehaviour
         {
             //turn into this material
             m.material = Gray;
+            //gameObject.tag = "Gray";
         }
     }
 }

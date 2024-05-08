@@ -3,23 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sun : MonoBehaviour
+public class TextCollider : MonoBehaviour
 {
     public GameObject textBox;
-    public bool inReach;
-    public bool buried;
-
-    public void Start()
-    {
-        buried = false;
-    }
-
+    public GameObject wall;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Reach"))
         {
             textBox.SetActive(true);
-            inReach = true;
         }
     }
 
@@ -28,16 +20,11 @@ public class Sun : MonoBehaviour
         if (other.CompareTag("Reach"))
         {
             textBox.SetActive(false);
-            inReach = false;
         }
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)&& inReach && buried)
-        {
-            Debug.Log("Lights out");
-            //turn off sun
-        }
+        
     }
 }

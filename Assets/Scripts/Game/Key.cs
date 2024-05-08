@@ -1,19 +1,12 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sun : MonoBehaviour
+public class Key : MonoBehaviour
 {
     public GameObject textBox;
+    public GameObject wall;
     public bool inReach;
-    public bool buried;
-
-    public void Start()
-    {
-        buried = false;
-    }
-
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Reach"))
@@ -34,10 +27,11 @@ public class Sun : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)&& inReach && buried)
+        if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
-            Debug.Log("Lights out");
-            //turn off sun
+            Debug.Log("Key found");
+            textBox.SetActive(false);
+            Destroy(wall);
         }
     }
 }

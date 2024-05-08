@@ -3,15 +3,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sun : MonoBehaviour
+public class DogText : MonoBehaviour
 {
     public GameObject textBox;
+    public Animator anim;
     public bool inReach;
-    public bool buried;
-
-    public void Start()
+    public GameObject wall;
+ 
+    void Start()
     {
-        buried = false;
+        textBox.SetActive(false);
+        anim = gameObject.GetComponent<Animator>();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -31,13 +33,14 @@ public class Sun : MonoBehaviour
             inReach = false;
         }
     }
-
-    private void Update()
+    
+    void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)&& inReach && buried)
+        if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
-            Debug.Log("Lights out");
-            //turn off sun
+            anim.Play("Stone");
+            Debug.Log("turn to stone");
+            Destroy(wall);
         }
     }
 }

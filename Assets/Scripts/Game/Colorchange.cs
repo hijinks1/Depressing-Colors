@@ -7,7 +7,7 @@ public class Colorchange : MonoBehaviour
 
     public Camera Eyes;
     public Material Gray;
-    public Movement other;
+    //public Movement other;
     
     void Update()
     {
@@ -29,6 +29,7 @@ public class Colorchange : MonoBehaviour
                 {
                     //turn into this material
                     m.material = Gray;
+                    //gameObject.tag = "Gray";
                 }
                 
                 // this is the same as ^
