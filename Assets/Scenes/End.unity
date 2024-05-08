@@ -123,7 +123,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &351685044
+--- !u!1 &366201568
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,26 +131,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 351685046}
-  - component: {fileID: 351685045}
+  - component: {fileID: 366201570}
+  - component: {fileID: 366201569}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!82 &351685045
+--- !u!82 &366201569
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351685044}
+  m_GameObject: {fileID: 366201568}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 853c7f79d6b71944783dbef2fcaa5b3c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 82e59766173b2754aa46e6b32a577900, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -236,16 +236,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!4 &351685046
+--- !u!4 &366201570
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351685044}
+  m_GameObject: {fileID: 366201568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.305007, y: 4.173792, z: -14.46408}
+  m_LocalPosition: {x: 355.66916, y: 332.44086, z: -632.51764}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -287,7 +287,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.45490196, g: 0.7490196, b: 0.84313726, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -356,6 +356,7 @@ GameObject:
   - component: {fileID: 753942813}
   - component: {fileID: 753942812}
   - component: {fileID: 753942815}
+  - component: {fileID: 753942816}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -372,16 +373,16 @@ RectTransform:
   m_GameObject: {fileID: 753942810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.41076, y: 1.41076, z: 1.41076}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1605256743}
   m_Father: {fileID: 1147766171}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -65}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -183}
+  m_SizeDelta: {x: -640, y: -420}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &753942812
 MonoBehaviour:
@@ -404,8 +405,8 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.75686276, g: 0.96520233, b: 1, a: 1}
+    m_NormalColor: {r: 0.74213827, g: 0.74213827, b: 0.74213827, a: 1}
+    m_HighlightedColor: {r: 0.52201253, g: 0.52201253, b: 0.52201253, a: 1}
     m_PressedColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
     m_SelectedColor: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 1}
     m_DisabledColor: {r: 0.7019608, g: 0.7019608, b: 0.7019608, a: 0.5019608}
@@ -427,33 +428,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 753942815}
-        m_TargetAssemblyTypeName: Button, Assembly-CSharp
-        m_MethodName: ChangeBG
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 753942815}
-        m_TargetAssemblyTypeName: Button, Assembly-CSharp
-        m_MethodName: NewText
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 753942815}
-        m_TargetAssemblyTypeName: Button, Assembly-CSharp
-        m_MethodName: NextScene
+      - m_Target: {fileID: 753942816}
+        m_TargetAssemblyTypeName: Reset, Assembly-CSharp
+        m_MethodName: MenuTime
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -517,6 +494,18 @@ MonoBehaviour:
   newColor: {r: 0.44654083, g: 0.44654083, b: 0.44654083, a: 0}
   buttonText: {fileID: 1605256744}
   newTextColor: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0}
+--- !u!114 &753942816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753942810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06b38a17a9bcae9499f92ecebd14042f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1147766167
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,8 +620,9 @@ GameObject:
   - component: {fileID: 1269550196}
   - component: {fileID: 1269550198}
   - component: {fileID: 1269550197}
+  - component: {fileID: 1269550199}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Type
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -654,7 +644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -103.3, y: 47.1}
+  m_AnchoredPosition: {x: -114, y: -2}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1269550197
@@ -677,7 +667,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Desaturate
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0e7a30c7f00a34442aab2f703bf890d6, type: 2}
   m_sharedMaterial: {fileID: 2904353063560517804, guid: 0e7a30c7f00a34442aab2f703bf890d6, type: 2}
@@ -704,15 +694,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 120
-  m_fontSizeBase: 120
+  m_fontSize: 70
+  m_fontSizeBase: 70
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -740,7 +730,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -235.80383, w: 0}
+  m_margin: {x: -153.1244, y: 4.2605534, z: -381.60342, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -754,6 +744,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1269550195}
   m_CullTransparentMesh: 1
+--- !u!114 &1269550199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269550195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 709a3b6f62a4dec4d9314dcf626362e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textMeshPro: {fileID: 1269550197}
+  stringArray:
+  - Your touch spread to the sun.
+  - You must live alone in your self inflicted darkness.
+  timeBetweenChars: 0.1
+  timeBetweenWords: 1
 --- !u!1 &1605256742
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,7 +819,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Begin
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0e7a30c7f00a34442aab2f703bf890d6, type: 2}
   m_sharedMaterial: {fileID: 2904353063560517804, guid: 0e7a30c7f00a34442aab2f703bf890d6, type: 2}
@@ -820,8 +828,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4287583546
-  m_fontColor: {r: 0.2270677, g: 0.33358833, b: 0.5597484, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1058,4 +1066,4 @@ SceneRoots:
   - {fileID: 1671724686}
   - {fileID: 1147766171}
   - {fileID: 1736164196}
-  - {fileID: 351685046}
+  - {fileID: 366201570}

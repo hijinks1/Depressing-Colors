@@ -7,6 +7,7 @@ public class PickUpController : MonoBehaviour
     public float pickUpRange = 2f;
     public KeyCode pickUpKey = KeyCode.Q;
     private GameObject currentPickUpObject = null;
+    public Camera Eyes;
     
     void Update()
     {
@@ -26,7 +27,7 @@ public class PickUpController : MonoBehaviour
     public void TryPickUp()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, pickUpRange))
+        if (Physics.Raycast(Eyes.transform.position, Eyes.transform.forward, out hit, pickUpRange))
         {
             if (hit.collider.GetComponent<PickUpObject>() != null)
             {

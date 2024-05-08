@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Sun : MonoBehaviour
 {
@@ -36,6 +37,7 @@ public class Sun : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)&& inReach && buried)
         {
+            SceneManager.LoadScene("End");
             Debug.Log("Lights out");
             //turn off sun
         }

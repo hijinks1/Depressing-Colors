@@ -9,6 +9,8 @@ public class DogText : MonoBehaviour
     public Animator anim;
     public bool inReach;
     public GameObject wall;
+    public AudioClip stone;
+    public AudioSource source;
  
     void Start()
     {
@@ -39,6 +41,7 @@ public class DogText : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
             anim.Play("Stone");
+            source.PlayOneShot(stone);
             Debug.Log("turn to stone");
             Destroy(wall);
         }

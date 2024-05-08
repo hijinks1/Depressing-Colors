@@ -7,6 +7,8 @@ public class Searchforkey : MonoBehaviour
 {
     public GameObject textBox;
     public bool inReach;
+    public AudioClip nope;
+    public AudioSource source;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Reach"))
@@ -30,6 +32,7 @@ public class Searchforkey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
             Debug.Log("Key NOT found");
+            source.PlayOneShot(nope);
             textBox.SetActive(false);
         }
     }

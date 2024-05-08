@@ -7,6 +7,8 @@ public class Key : MonoBehaviour
     public GameObject textBox;
     public GameObject wall;
     public bool inReach;
+    public AudioClip key;
+    public AudioSource source;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Reach"))
@@ -30,6 +32,7 @@ public class Key : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
             Debug.Log("Key found");
+            source.PlayOneShot(key);
             textBox.SetActive(false);
             Destroy(wall);
         }
