@@ -9,6 +9,7 @@ public class Sun : MonoBehaviour
     public GameObject textBox;
     public bool inReach;
     public bool buried;
+    public GameObject winText;
 
     public void Start()
     {
@@ -17,9 +18,15 @@ public class Sun : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Reach"))
+        if (other.CompareTag("Reach") && !buried)
         {
             textBox.SetActive(true);
+            inReach = true;
+        }
+
+        if (other.CompareTag("Reach") && buried)
+        {
+            winText.SetActive(true);
             inReach = true;
         }
     }
@@ -39,7 +46,6 @@ public class Sun : MonoBehaviour
         {
             SceneManager.LoadScene("End");
             Debug.Log("Lights out");
-            //turn off sun
         }
     }
 }

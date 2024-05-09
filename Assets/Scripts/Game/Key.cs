@@ -7,14 +7,19 @@ public class Key : MonoBehaviour
     public GameObject textBox;
     public GameObject wall;
     public bool inReach;
+    public bool checkDrawer = false;
     public AudioClip key;
     public AudioSource source;
+    public GameObject keyFound;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Reach"))
         {
-            textBox.SetActive(true);
-            inReach = true;
+            if (checkDrawer == false)
+            {
+                textBox.SetActive(true);
+                inReach = true;
+            }
         }
     }
 
@@ -24,6 +29,7 @@ public class Key : MonoBehaviour
         {
             textBox.SetActive(false);
             inReach = false;
+            keyFound.SetActive(false);
         }
     }
 
@@ -33,7 +39,9 @@ public class Key : MonoBehaviour
         {
             Debug.Log("Key found");
             source.PlayOneShot(key);
+            checkDrawer = true;
             textBox.SetActive(false);
+            keyFound.SetActive(true);
             Destroy(wall);
         }
     }

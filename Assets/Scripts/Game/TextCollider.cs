@@ -22,9 +22,5 @@ public class TextCollider : MonoBehaviour
             textBox.SetActive(false);
         }
     }
-
-    private void Update()
-    {
-        
-    }
+    
 }

@@ -11,10 +11,10 @@ public class DogText : MonoBehaviour
     public GameObject wall;
     public AudioClip stone;
     public AudioSource source;
+    public bool petDog = false;
  
     void Start()
     {
-        textBox.SetActive(false);
         anim = gameObject.GetComponent<Animator>();
     }
 
@@ -22,9 +22,13 @@ public class DogText : MonoBehaviour
     {
         if (other.CompareTag("Reach"))
         {
-            textBox.SetActive(true);
-            inReach = true;
+            if (petDog == false)
+            {
+                textBox.SetActive(true);
+                inReach = true;
+            }
         }
+            
     }
 
     public void OnTriggerExit(Collider other)
@@ -40,10 +44,15 @@ public class DogText : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && inReach)
         {
-            anim.Play("Stone");
-            source.PlayOneShot(stone);
-            Debug.Log("turn to stone");
-            Destroy(wall);
+            if (petDog == false)
+            {
+                anim.Play("Stone");
+                source.PlayOneShot(stone);
+                Debug.Log("turn to stone");
+                petDog = true;
+                textBox.SetActive(false);
+                Destroy(wall);
+            }
         }
     }
 }
